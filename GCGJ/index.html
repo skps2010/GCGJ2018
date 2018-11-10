@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>遊戲</title>
     <script src="blockly/blockly_compressed.js"></script>
-    <script src="blockly/blocks_compressed.js"></script>
+    <script src="blockly/blocks_compressed.js"></script>ｂ
     <script src="blockly/msg/js/zh-hant.js"></script>
-    <script src="block/javascript_compressed.js"></script>
+    <script src="blockly/javascript_compressed.js"></script>
 
 </head>
 
@@ -17,6 +17,7 @@
     <canvas id="myCanvas" width="480" height="320"></canvas>
     <script src="game/main.js"></script>
     <script src="game/block.js"></script>
+    <button onclick="runCode()">執行</button>
 
     <xml id="toolbox" style="display: none">
         <block type="controls_if"></block>
@@ -31,6 +32,19 @@
         var workspace = Blockly.inject('blocklyDiv', {
             toolbox: document.getElementById('toolbox')
         });
+
+        function runCode() {
+            window.LoopTrap = 1000;
+            Blockly.JavaScript.INFINITE_LOOP_TRAP =
+                'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            try {
+                eval(code);
+            } catch (e) {
+                alert(e);
+            }
+        }
     </script>
 </body>
 
