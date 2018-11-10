@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+  }
+  
+  .map{
+    height: 500px;
+    width: 500px;
+    background-color: rgba(0,0,0, 0.3);
+  }
+  
+  .bg {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+  }
+  
+  .grid{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+  }
+  
+  
+  .player{
+    transition: 1s;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    left: 25px;
+    top: 25px;
+  }
+  
+  .btn{
+    transition: 1s;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    left: 100px;
+    top: 100px;
+  }
