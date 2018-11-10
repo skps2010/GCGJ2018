@@ -48,15 +48,15 @@
     
   }
 
-  .my_image{
-    
+  .grass{
+    position: absolute;
     width: 100px;
     height: 100px;
     border: 1px solid gray;
     
   }
   .rock{
-    
+    position: absolute;
     width: 100px;
     height: 100px;
     border: 1px solid gray;
