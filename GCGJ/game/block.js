@@ -47,22 +47,14 @@ Blockly.Blocks[dirList[3]] = {
 };
 
 Blockly.JavaScript[dirList[0]] = function(block) {
-    move(0);
-    console.log(dirs[0]);
-    return '...;\n';
+    return 'move(0);\n';
 };
 Blockly.JavaScript[dirList[1]] = function(block) {
-    move(1);
-    console.log(dirs[1]);
-    return '...;\n';
+    return 'move(1);\n';
 };
 Blockly.JavaScript[dirList[2]] = function(block) {
-    move(2);
-    console.log(dirs[2]);
-    return '...;\n';
+    return 'move(2);\n';
 };
 Blockly.JavaScript[dirList[3]] = function(block) {
-    move(3);
-    console.log(dirs[3]);
-    return '...;\n';
+    return 'move(3);\n';
 };

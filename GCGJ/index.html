@@ -17,7 +17,10 @@
     <canvas id="myCanvas" width="480" height="320"></canvas>
     <script src="game/main.js"></script>
     <script src="game/block.js"></script>
-    <button onclick="runCode()">執行</button>
+    <p>
+        <button onclick="showCode()">Show JavaScript</button>
+        <button onclick="runCode()">Run JavaScript</button>
+    </p>
 
     <xml id="toolbox" style="display: none">
         <block type="controls_if"></block>
@@ -32,6 +35,13 @@
         var workspace = Blockly.inject('blocklyDiv', {
             toolbox: document.getElementById('toolbox')
         });
+
+        function showCode() {
+            // Generate JavaScript code and display it.
+            Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            alert(code);
+        }
 
         function runCode() {
             window.LoopTrap = 1000;
