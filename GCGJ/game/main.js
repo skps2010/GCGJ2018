@@ -3,6 +3,8 @@
 // var x = canvas.width / 2;
 // var y = canvas.height / 2;
 var key = [false, false, false, false]; //左 上 右 下
+var moveX = [-100, 0, 100, 0];
+var moveY = [0, -100, 0, 100];
 
 // ctx.beginPath();
 // ctx.rect(20, 40, 50, 50);
@@ -24,7 +26,11 @@ var key = [false, false, false, false]; //左 上 右 下
 // }
 // ctx.closePath();
 
-
+function move(a) {
+    $(".player").css("left", ($(".player").css("left") + moveX[a]) + "px");
+    $(".player").css("top", ($(".player").css("top") + moveY[a]) + "px");
+    console.log($(".player").css("left"));
+}
 
 function keyUpHandler(e) {
     if (e.keyCode >= 37 && e.keyCode <= 40) key[e.keyCode - 37] = false;
