@@ -81,4 +81,5 @@ $(document).ready(function() {
     //     console.log("move yes");
     //     //$('#my_image').attr('src','second.jpg');
     // }
+
 });

@@ -1,4 +1,5 @@
-var key = [false, false, false, false]; //左 上 右 下s
+var key = [false, false, false, false]; //左 上 右 下
+
 var moveX = [-1, 0, 1, 0];
 var moveY = [0, -1, 0, 1];
 var x = 4,
@@ -41,12 +42,11 @@ function mine() {
 }
 
 function set() {
+    console.table(rockArray);
+    $(".player").css("left", (x * 100) + "px");
+    $(".player").css("top", (y * 100 - 100) + "px");
     $(".bar").css("height", (bar * 10 + 5) + "px");
     $(".stonebar").css("height", (stonebar * 10 + 5) + "px");
-    $("#player_s1").css("left", (x * 100) + "px");
-    $("#player_s1").css("top", (y * 100) + "px");
-    $("#player_s2").css("left", (x * 100) + "px");
-    $("#player_s2").css("top", (y * 100 - 100) + "px");
 }
 
 
