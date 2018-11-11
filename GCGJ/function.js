@@ -4,15 +4,15 @@ var treeArray = new Array(100);
 
 $(document).ready(function(){
 
-    for(let i=0; i<100; i++){
-  
+    for (let i = 0; i < 100; i++) {
+
         // $(".bg").append(
         //     '<div class="grid">'+(i+1)+'</div>'
         // );
 
         // let playerX = 0;
         // let playerY = 0;
-      
+
         // $(".btn").on("click", function(){
         //     playerX+=100;
         //     $(".player").css("left", playerX+ "px");              
@@ -22,36 +22,45 @@ $(document).ready(function(){
         monsterArray[i] = 0;
         treeArray[i] = 0;
 
-        var randomG=Math.floor(Math.random()*(6-0));
-        var locationX = i%10 * 100;
-        var locationY = Math.floor(i/10) * 100;
-        if(randomG==0){
+        var randomG = Math.floor(Math.random() * (6 - 0));
+        var locationX = i % 10 * 100;
+        var locationY = Math.floor(i / 10) * 100;
+        if (randomG == 0) {
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_grass.png"/>');
+            $("#grass" + i).css("left", locationX + "px");
+            $("#grass" + i).css("top", locationY + "px");
         }
         else if(randomG==1){
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil1.png"/>');
+            $("#grass" + i).css("left", locationX + "px");
+            $("#grass" + i).css("top", locationY + "px");
         }  
         else if(randomG==2){
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil2.png"/>');
+            $("#grass" + i).css("left", locationX + "px");
+            $("#grass" + i).css("top", locationY + "px");
         }  
         else if(randomG==3){
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil3.png"/>');
+            $("#grass" + i).css("left", locationX + "px");
+            $("#grass" + i).css("top", locationY + "px");
         }  
         else if(randomG==4){
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil4.png"/>');
-        }  
+            $("#grass" + i).css("left", locationX + "px");
+            $("#grass" + i).css("top", locationY + "px");
+        }
         else if(randomG==5){
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil.png"/>');
-        }
-        
-        $("#grass"+i).css("left", locationX + "px");
-        $("#grass"+i).css("top", locationY + "px");
+            $("#grass" + i).css("left", locationX + "px");
+            $("#grass" + i).css("top", locationY + "px");
+        }    
 
-        var randomR=Math.floor(Math.random()*(20-0));
-        if(randomR==0 && i!=24){
+        var randomR = Math.floor(Math.random() * (20 - 0));
+        if (randomR == 0 && i!=24) {
             $(".bg").append('<img class="rock" id = rock' + i + ' src="./image/ground/gcgj_rock.png"/>');
-            $("#rock"+i).css("left", locationX + "px");
-            $("#rock"+i).css("top", locationY + "px");
+            $("#rock" + i).css("left", locationX + "px");
+            $("#rock" + i).css("top", locationY + "px");
             rockArray[i] = 1;
             console.log(i);
             //rock(i);
@@ -90,5 +99,5 @@ $(document).ready(function(){
     //     console.log("move yes");
     //     //$('#my_image').attr('src','second.jpg');
     // }
-}
-);
+
+});

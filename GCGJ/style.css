@@ -1,15 +1,15 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
-  }
-  
-  .map{
+}
+
+.map {
     height: 1000px;
     width: 1000px;
-    background-color: rgba(0,0,0, 0.3);
-  }
-  
-  .bg {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bg {
     width: 1000px;
     height: 1000px;
     display: flex;
@@ -17,26 +17,26 @@
     position: absolute;
     top: 0px;
     left: 0px;
-  }
-  
-  .grid{
+}
+
+.grid {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    border: 1px solid grey;
   }
-  
-  
+
   .player{
     /* transition: 1s; */
     position: absolute;
     width: 100px;
-    height: 100px;
-    left: 0px;
-    top: 0px;
+    height: 200px;
+    left: 400px;
+    top: 300px;
     z-index: 3;
   }
-  
-  /* .btn{
+
+
+.btn {
     transition: 1s;
     position: absolute;
     width: 50px;
@@ -44,43 +44,55 @@
     background-color: blue;
     left: 100px;
     top: 100px;
-    
-  } */
+ 
+  } 
 
-  .grass{
+.grass {
     position: absolute;
     width: 100px;
     height: 100px;
     border: 1px solid gray;
-    
-  }
-  .rock{
+    z-index: 2;
+}
+
+.rock {
     position: absolute;
     width: 100px;
     height: 100px;
     border: 1px solid gray;
-    
+    z-index: 2;
   }
 
-  #player_s1{
+  /* #player_m{ */
     /* transition: 1s; */
-    position: absolute;
+    /* position: absolute;
     width: 100px;
-    height: 100px;
-    left: 400px;
-    top: 400px;
-    z-index: 3;
-  }
-  #player_s2{
-    /* transition: 1s; */
-    position: absolute;
-    width: 100px;
-    height: 100px;
+    height: 200px;
     left: 400px;
     top: 300px;
     z-index: 3;
-  }
+  } */
+
   #music{
     position: absolute;
     z-index: 0;
   }
+
+
+.bar {
+    position: absolute;
+    width: 10px;
+    height: 200px;
+    background-color: blue;
+    left: 1050px;
+    top: 50px;
+}
+
+.stonebar {
+    position: absolute;
+    width: 10px;
+    height: 100px;
+    background-color: gray;
+    left: 1100px;
+    top: 50px;
+}
