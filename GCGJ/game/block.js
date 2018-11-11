@@ -1,5 +1,5 @@
-var dirList = ["moveUp", "moveDown", "moveLeft", "moveRight"];
-var dirs = ["up", "down", "left", "right"];
+var dirList = ["moveLeft", "moveUp", "moveRight", "moveDown"];
+var dirs = ["left", "up", "right", "down"];
 
 Blockly.Blocks[dirList[0]] = {
     init: function() {
