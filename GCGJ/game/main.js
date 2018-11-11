@@ -11,6 +11,8 @@ var rockArray = new Array(100);
 var monsterArray = new Array(100);
 var treeArray = new Array(100);
 
+var tasks = new Array();
+
 set();
 
 function move(a) {
@@ -64,13 +66,7 @@ function moveAni() {
 var s2ImgCounter = 0;
 var s2Times = 0;
 
-function keyUpHandler(e) {
-    if (e.keyCode >= 37 && e.keyCode <= 40) key[e.keyCode - 37] = false;
+function doTask() {
+    eval(tasks.shift());
+    if (tasks.length > 0) setTimeout(doTask, 1000);
 }
-
-function keyDownHandler(e) {
-    if (e.keyCode >= 37 && e.keyCode <= 40) key[e.keyCode - 37] = true;
-}
-
-document.addEventListener("keydown", keyDownHandler, false);
-document.addEventListener("keyup", keyUpHandler, false);

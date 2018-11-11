@@ -44,7 +44,7 @@
         <category name="Control">
             <block type="controls_if"></block>
             <block type="controls_whileUntil"></block>
-            <block type="controls_for">
+            <block type="controls_repeat">
         </category>
         <category name="Logic">
             <block type="logic_compare"></block>
@@ -94,13 +94,14 @@
         }
 
         function runCode() {
-            window.LoopTrap = 1000;
+            window.LoopTrap = 1000000;
             Blockly.JavaScript.INFINITE_LOOP_TRAP =
                 'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
             var code = Blockly.JavaScript.workspaceToCode(workspace);
             Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
             try {
                 eval(code);
+                doTask();
             } catch (e) {
                 alert(e);
             }
