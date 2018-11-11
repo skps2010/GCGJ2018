@@ -1,3 +1,7 @@
+var rockArray = new Array(100);
+var monsterArray = new Array(100);
+var treeArray = new Array(100);
+
 $(document).ready(function(){
 
     for(let i=0; i<100; i++){
@@ -14,10 +18,6 @@ $(document).ready(function(){
         //     $(".player").css("left", playerX+ "px");              
         // });
 
-        var rockArray = new Array(100);
-        var monsterArray = new Array(100);
-        var treeArray = new Array(100);
-
         rockArray[i] = 0;
         monsterArray[i] = 0;
         treeArray[i] = 0;
@@ -29,16 +29,16 @@ $(document).ready(function(){
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_grass.png"/>');
         }
         else if(randomG==1){
-            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_s_g.png"/>');
+            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil1.png"/>');
         }  
         else if(randomG==2){
-            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_s_g2.png"/>');
+            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil2.png"/>');
         }  
         else if(randomG==3){
-            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_s_g3.png"/>');
+            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil3.png"/>');
         }  
         else if(randomG==4){
-            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_s_g4.png"/>');
+            $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil4.png"/>');
         }  
         else if(randomG==5){
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_soil.png"/>');
@@ -53,6 +53,7 @@ $(document).ready(function(){
             $("#rock"+i).css("left", locationX + "px");
             $("#rock"+i).css("top", locationY + "px");
             rockArray[i] = 1;
+            console.log(i);
             //rock(i);
         }
     }
