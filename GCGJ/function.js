@@ -14,10 +14,6 @@ $(document).ready(function() {
         //     $(".player").css("left", playerX+ "px");              
         // });
 
-        var rockArray = new Array(100);
-        var monsterArray = new Array(100);
-        var treeArray = new Array(100);
-
         rockArray[i] = 0;
         monsterArray[i] = 0;
         treeArray[i] = 0;
