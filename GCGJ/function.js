@@ -20,8 +20,8 @@ $(document).ready(function() {
         monsterArray[i] = 0;
 
         var randomG = Math.floor(Math.random() * (6 - 0));
-        var locationX = i % 10 * 100;
-        var locationY = Math.floor(i / 10) * 100;
+        var locationX = i % 10 * size;
+        var locationY = Math.floor(i / 10) * size;
         if (randomG == 0) {
             $(".bg").append('<img class="grass" id = grass' + i + ' src="./image/ground/gcgj_grass.png"/>');
         } else if (randomG == 1) {

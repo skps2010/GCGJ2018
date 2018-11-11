@@ -37,8 +37,8 @@
     </div>
 
     <p>
-        <button onclick="showCode()">顯示程式碼</button>
-        <button onclick="runCode()">執行</button>
+        <button class="b1" onclick="showCode()">顯示</button>
+        <button class="b2" onclick="runCode()">執行</button>
     </p>
 
     <xml id="toolbox" style="display: none">
@@ -80,7 +80,7 @@
             </block>
         </category>
     </xml>
-    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    <div id="blocklyDiv"></div>
 
     <script>
         var workspace = Blockly.inject('blocklyDiv', {
@@ -110,4 +110,4 @@
     </script>
 </body>
 
-</html>ｂｂ
+</html>

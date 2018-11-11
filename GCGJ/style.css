@@ -86,15 +86,43 @@
     width: 10px;
     height: 200px;
     background-color: blue;
-    left: 1050px;
+    left: 930px;
     top: 50px;
+    z-index: 4;
 }
 
 .stonebar {
     position: absolute;
     width: 10px;
     height: 100px;
-    background-color: gray;
-    left: 1100px;
+    background-color: red;
+    left: 970px;
     top: 50px;
+    z-index: 4;
+}
+
+.b1 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    left: 1010px;
+    top: 200px;
+    z-index: 999;
+}
+
+.b2 {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    left: 1010px;
+    top: 230px;
+    z-index: 999;
+}
+
+#blocklyDiv {
+    position: absolute;
+    width: 400px;
+    height: 700px;
+    left: 1000px;
+    top: 0px;
 }

@@ -6,7 +6,8 @@ var x = 4,
     y = 4,
     bar = 20,
     stonebar = 10,
-    dir = 0;
+    dir = 0,
+    size = 100;
 
 var rockArray = new Array(100);
 var rockNum = 0;
@@ -46,8 +47,8 @@ function mine() {
         rockNum--;
         while (rockNum < 5) {
             let randomR = Math.floor(Math.random() * (100 - 0));
-            let locationX = randomR % 10 * 100;
-            let locationY = Math.floor(randomR / 10) * 100;
+            let locationX = randomR % 10 * size;
+            let locationY = Math.floor(randomR / 10) * size;
             if (rockArray[randomR] == 0 && randomR != (y * 10 + x)) {
                 rockArray[randomR] == 2;
                 $(".bg").append('<img class="rock" id = rock' + randomR + ' src="./image/ground/gcgj_rock.png"/>');
@@ -64,8 +65,8 @@ function mine() {
 
 function set() {
     console.table(rockArray);
-    $(".player").css("left", (x * 100) + "px");
-    $(".player").css("top", (y * 100 - 100) + "px");
+    $(".player").css("left", (x * size) + "px");
+    $(".player").css("top", (y * size - size) + "px");
     $(".bar").css("height", (bar * 10 + 5) + "px");
     $(".stonebar").css("height", (stonebar * 10 + 5) + "px");
 }
