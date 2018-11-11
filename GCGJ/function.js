@@ -48,7 +48,7 @@ $(document).ready(function(){
         $("#grass"+i).css("top", locationY + "px");
 
         var randomR=Math.floor(Math.random()*(20-0));
-        if(randomR==0){
+        if(randomR==0 && i!=24){
             $(".bg").append('<img class="rock" id = rock' + i + ' src="./image/ground/gcgj_rock.png"/>');
             $("#rock"+i).css("left", locationX + "px");
             $("#rock"+i).css("top", locationY + "px");
@@ -56,9 +56,38 @@ $(document).ready(function(){
             //rock(i);
         }
     }
+ 
     // function rock(i){   
     //     console.log(i);
     // }
-      
+    $(".rock").click(function(){
+        move(0);
+        console.log("function yes");
+    });
+    
+    // function move(i){ 
+    //     var p = $( "#player_s1" );
+    //     var position = p.position();
+    //     var xmove=0;
+    //     var ymove=0;
+    //     if(i==0){
+    //         ymove=100;
+    //     }
+    //     else if(i==1){
+    //         xmove=100;
+    //     }
+    //     else if(i==2){
+    //         ymove=-100;
+    //     }
+    //     else if(i==3){
+    //         xmove=-100;
+    //     }
+    //     $("#player_s1").css("left", (position.locationX + xmove) + "px", 
+    //         "right", (position.locationY + ymove) + "px");
+    //     $("#player_s1").css("left", (position.locationX + xmove) + "px", 
+    //         "right", (position.locationY + ymove - 100) + "px");
+    //     console.log("move yes");
+    //     //$('#my_image').attr('src','second.jpg');
+    // }
 }
 );
