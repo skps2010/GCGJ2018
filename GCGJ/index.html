@@ -13,23 +13,20 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-    <script src="game/main.js"></script>
-    <script src="game/block.js"></script>
-    
-    <script
-src="https://code.jquery.com/jquery-3.3.1.min.js"
-integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-crossorigin="anonymous"></script>
-    <script src="function.js"></script>
+<script src="game/main.js"></script>
+<script src="game/block.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="function.js"></script>
 
 
 <body>
-    
+
     <div class="map">
         <div class="bg"></div>
-        <!-- <div class="player">OAO</div>
-        <div class="btn">click</div> -->
-   
+        <div class="player">OAO</div>
+        <div class="bar"></div>
+        <div class="stonebar"></div>
     </div>
 
     <p>
@@ -38,11 +35,43 @@ crossorigin="anonymous"></script>
     </p>
 
     <xml id="toolbox" style="display: none">
-        <block type="controls_if"></block>
-        <block type="moveUp"></block>
-        <block type="moveDown"></block>
-        <block type="moveRight"></block>
-        <block type="moveLeft"></block>
+        <category name="Control">
+            <block type="controls_if"></block>
+            <block type="controls_whileUntil"></block>
+            <block type="controls_for">
+        </category>
+        <category name="Logic">
+            <block type="logic_compare"></block>
+            <block type="logic_operation"></block>
+            <block type="logic_boolean"></block>
+        </category>
+        <category name="Math">
+            <block type="math_number">
+                <field name="NUM">42</field>
+            </block>
+            </block>
+
+            <block type="math_arithmetic">
+                <field name="OP">ADD</field>
+                <value name="A">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="B">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+        </category>
+        <category name="Action">
+            <block type="moveUp"></block>
+            <block type="moveDown"></block>
+            <block type="moveRight"></block>
+            <block type="moveLeft"></block>
+            <block type="mine"></block>
+        </category>
     </xml>
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
 

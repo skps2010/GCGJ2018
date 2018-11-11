@@ -1,11 +1,21 @@
 var key = [false, false, false, false]; //左 上 右 下
 var moveX = [-100, 0, 100, 0];
 var moveY = [0, -100, 0, 100];
+var stone = 0;
 
 function move(a) {
-    $(".player").css("left", (parseInt($(".player").css("left")) + moveX[a]) + "px");
-    $(".player").css("top", (parseInt($(".player").css("top")) + moveY[a]) + "px");
-    console.log($(".player").css("left"));
+    change(".player", "left", moveX[a]);
+    change(".player", "top", moveY[a]);
+    change(".bar", "height", -10);
+}
+
+function mine() {
+    change(".bar", "height", -10);
+    change(".stonebar", "height", +10);
+}
+
+function change(s1, s2, a) {
+    $(s1).css(s2, (parseInt($(s1).css(s2)) + a) + "px");
 }
 
 function keyUpHandler(e) {

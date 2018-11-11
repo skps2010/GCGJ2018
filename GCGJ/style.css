@@ -26,7 +26,7 @@
 }
 
 .player {
-    transition: 1s;
+    /* transition: 1s; */
     position: absolute;
     width: 75px;
     height: 75px;
@@ -46,26 +46,34 @@
     top: 100px;
 }
 
-<<<<<<< HEAD
-.my_image {
+.grass {
+    position: absolute;
     width: 100px;
     height: 100px;
     border: 1px solid gray;
 }
 
 .rock {
-=======
-  .grass{
     position: absolute;
     width: 100px;
     height: 100px;
     border: 1px solid gray;
-    
-  }
-  .rock{
+}
+
+.bar {
     position: absolute;
->>>>>>> 034cdc09d2f8e5c6a225929922c06a7ac678d47d
-    width: 100px;
+    width: 10px;
+    height: 200px;
+    background-color: blue;
+    left: 1050px;
+    top: 50px;
+}
+
+.stonebar {
+    position: absolute;
+    width: 10px;
     height: 100px;
-    border: 1px solid gray;
+    background-color: gray;
+    left: 1100px;
+    top: 50px;
 }

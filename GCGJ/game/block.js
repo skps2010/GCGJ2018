@@ -1,5 +1,5 @@
 var dirList = ["moveLeft", "moveUp", "moveRight", "moveDown"];
-var dirs = ["left", "up", "right", "down"];
+var dirs = ["左", "上", "右", "下"];
 
 Blockly.Blocks[dirList[0]] = {
     init: function() {
@@ -45,6 +45,17 @@ Blockly.Blocks[dirList[3]] = {
         this.setHelpUrl("");
     }
 };
+Blockly.Blocks["mine"] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("挖掘");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
 
 Blockly.JavaScript[dirList[0]] = function(block) {
     return 'move(0);\n';
@@ -57,4 +68,7 @@ Blockly.JavaScript[dirList[2]] = function(block) {
 };
 Blockly.JavaScript[dirList[3]] = function(block) {
     return 'move(3);\n';
+};
+Blockly.JavaScript["mine"] = function(block) {
+    return 'mine();\n';
 };
