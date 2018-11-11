@@ -46,6 +46,7 @@
     top: 100px;
 }
 
+<<<<<<< HEAD
 .my_image {
     width: 100px;
     height: 100px;
@@ -53,6 +54,17 @@
 }
 
 .rock {
+=======
+  .grass{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    
+  }
+  .rock{
+    position: absolute;
+>>>>>>> 034cdc09d2f8e5c6a225929922c06a7ac678d47d
     width: 100px;
     height: 100px;
     border: 1px solid gray;
