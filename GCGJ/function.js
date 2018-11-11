@@ -11,7 +11,7 @@ $(document).ready(function() {
 
         // $(".btn").on("click", function(){
         //     playerX+=100;
-        //     $(".player").css("left", playerX+ "px");              
+        //     $(".player").css("left", playerX+ "px");             
         // });
 
         rockArray[i] = 0;
@@ -51,7 +51,7 @@ $(document).ready(function() {
         }
     }
 
-    // function rock(i){   
+    // function rock(i){  
     //     console.log(i);
     // }
     $(".rock").click(function() {
@@ -59,7 +59,7 @@ $(document).ready(function() {
         console.log("function yes");
     });
 
-    // function move(i){ 
+    // function move(i){
     //     var p = $( "#player_s1" );
     //     var position = p.position();
     //     var xmove=0;
@@ -76,9 +76,9 @@ $(document).ready(function() {
     //     else if(i==3){
     //         xmove=-100;
     //     }
-    //     $("#player_s1").css("left", (position.locationX + xmove) + "px", 
+    //     $("#player_s1").css("left", (position.locationX + xmove) + "px",
     //         "right", (position.locationY + ymove) + "px");
-    //     $("#player_s1").css("left", (position.locationX + xmove) + "px", 
+    //     $("#player_s1").css("left", (position.locationX + xmove) + "px",
     //         "right", (position.locationY + ymove - 100) + "px");
     //     console.log("move yes");
     //     //$('#my_image').attr('src','second.jpg');

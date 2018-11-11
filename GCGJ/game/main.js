@@ -41,15 +41,15 @@ function mine() {
     bar--;
     stonebar++;
     rockArray[indexRock]--;
-    if(rockArray[indexRock]==0){
-        $("#rock"+indexRock).remove();
+    if (rockArray[indexRock] == 0) {
+        $("#rock" + indexRock).remove();
         rockNum--;
-        while(rockNum<5){
+        while (rockNum < 5) {
             let randomR = Math.floor(Math.random() * (100 - 0));
             let locationX = randomR % 10 * 100;
             let locationY = Math.floor(randomR / 10) * 100;
-            if(rockArray[randomR]==0 && randomR!= (y*10+x)){
-                rockArray[randomR]==2;
+            if (rockArray[randomR] == 0 && randomR != (y * 10 + x)) {
+                rockArray[randomR] == 2;
                 $(".bg").append('<img class="rock" id = rock' + randomR + ' src="./image/ground/gcgj_rock.png"/>');
                 $("#rock" + randomR).css("left", locationX + "px");
                 $("#rock" + randomR).css("top", locationY + "px");
@@ -57,7 +57,7 @@ function mine() {
             }
         }
     }
-    
+
 
     set();
 }
