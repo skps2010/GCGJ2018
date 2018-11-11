@@ -37,22 +37,29 @@
     </div>
 
     <p>
-        <button onclick="showCode()">Show JavaScript</button>
-        <button onclick="runCode()">Run JavaScript</button>
+        <button onclick="showCode()">顯示程式碼</button>
+        <button onclick="runCode()">執行</button>
     </p>
 
     <xml id="toolbox" style="display: none">
-        <category name="Control">
+        <category name="動作">
+            <block type="moveUp"></block>
+            <block type="moveDown"></block>
+            <block type="moveRight"></block>
+            <block type="moveLeft"></block>
+            <block type="mine"></block>
+        </category>
+        <category name="控制">
             <block type="controls_if"></block>
             <block type="controls_whileUntil"></block>
             <block type="controls_repeat">
         </category>
-        <category name="Logic">
+        <category name="邏輯">
             <block type="logic_compare"></block>
             <block type="logic_operation"></block>
             <block type="logic_boolean"></block>
         </category>
-        <category name="Math">
+        <category name="數學">
             <block type="math_number">
                 <field name="NUM">42</field>
             </block>
@@ -71,13 +78,6 @@
                     </shadow>
                 </value>
             </block>
-        </category>
-        <category name="Action">
-            <block type="moveUp"></block>
-            <block type="moveDown"></block>
-            <block type="moveRight"></block>
-            <block type="moveLeft"></block>
-            <block type="mine"></block>
         </category>
     </xml>
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
@@ -110,4 +110,4 @@
     </script>
 </body>
 
-</html>
+</html>ｂｂ
