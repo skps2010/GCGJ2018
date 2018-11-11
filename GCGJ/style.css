@@ -4,14 +4,14 @@
 }
 
 .map {
-    height: 500px;
-    width: 500px;
+    height: 1000px;
+    width: 1000px;
     background-color: rgba(0, 0, 0, 0.3);
 }
 
 .bg {
-    width: 500px;
-    height: 500px;
+    width: 1000px;
+    height: 1000px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -25,18 +25,8 @@
     border: 1px solid black;
 }
 
-.player {
-    /* transition: 1s; */
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    background-color: red;
-    left: 0px;
-    top: 0px;
-    z-index: 3;
-}
 
-.btn {
+/* .btn{
     transition: 1s;
     position: absolute;
     width: 50px;
@@ -44,7 +34,8 @@
     background-color: blue;
     left: 100px;
     top: 100px;
-}
+    
+  } */
 
 .grass {
     position: absolute;
@@ -76,4 +67,29 @@
     background-color: gray;
     left: 1100px;
     top: 50px;
+}
+
+#player_s1 {
+    /* transition: 1s; */
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 400px;
+    top: 400px;
+    z-index: 3;
+}
+
+#player_s2 {
+    /* transition: 1s; */
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 400px;
+    top: 300px;
+    z-index: 3;
+}
+
+#music {
+    position: absolute;
+    z-index: 0;
 }

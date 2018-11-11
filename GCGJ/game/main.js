@@ -1,8 +1,8 @@
-var key = [false, false, false, false]; //左 上 右 下
+var key = [false, false, false, false]; //左 上 右 下s
 var moveX = [-1, 0, 1, 0];
 var moveY = [0, -1, 0, 1];
-var x = 0,
-    y = 0,
+var x = 4,
+    y = 4,
     bar = 20,
     stonebar = 10,
     dir = 0;
@@ -21,11 +21,12 @@ function move(a) {
     let dy = y + moveY[a];
 
     if (dx < 0 || dx > 9 || dy < 0 || dy > 9) return;
-    if (rockArray[dy * 10 + dx] == 1) return;
+    if (rockArray[dy * 10 + dx] == 1 || monsterArray[dy * 10 + dx] == 1) return;
     x = dx;
     y = dy;
     bar--;
     set();
+    moveAni();
 }
 
 function mine() {
@@ -38,12 +39,30 @@ function mine() {
 }
 
 function set() {
-    console.table(rockArray);
-    $(".player").css("left", (x * 100) + "px");
-    $(".player").css("top", (y * 100) + "px");
     $(".bar").css("height", (bar * 10 + 5) + "px");
     $(".stonebar").css("height", (stonebar * 10 + 5) + "px");
+    $("#player_s1").css("left", (x * 100) + "px");
+    $("#player_s1").css("top", (y * 100) + "px");
+    $("#player_s2").css("left", (x * 100) + "px");
+    $("#player_s2").css("top", (y * 100 - 100) + "px");
 }
+
+
+function moveAni() {
+    setTimeout(function() {
+        s2ImgCounter = (s2ImgCounter + 1) % 2;
+        s2Times++;
+        $("#player_s2").attr("src", `./image/player/gcgj_player_s2-${s2ImgCounter}.png`);
+        if (s2Times < 8) {
+            moveAni();
+        } else {
+            s2Times = 0;
+        }
+    }, 250);
+}
+
+var s2ImgCounter = 0;
+var s2Times = 0;
 
 function keyUpHandler(e) {
     if (e.keyCode >= 37 && e.keyCode <= 40) key[e.keyCode - 37] = false;
