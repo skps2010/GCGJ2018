@@ -1,6 +1,5 @@
 var dirList = ["moveLeft", "moveUp", "moveRight", "moveDown"];
-var dirs = ["left", "up", "right", "down"];
-
+var dirs = ["左", "上", "右", "下"];
 
 Blockly.Blocks[dirList[0]] = {
     init: function() {
@@ -59,17 +58,21 @@ Blockly.Blocks["mine"] = {
 };
 
 Blockly.JavaScript[dirList[0]] = function(block) {
-    return 'move(0);\n';
+    return t('move(0)');
 };
 Blockly.JavaScript[dirList[1]] = function(block) {
-    return 'move(1);\n';
+    return t('move(1)');
 };
 Blockly.JavaScript[dirList[2]] = function(block) {
-    return 'move(2);\n';
+    return t('move(2)');
 };
 Blockly.JavaScript[dirList[3]] = function(block) {
-    return 'move(3);\n';
+    return t('move(3)');
 };
 Blockly.JavaScript["mine"] = function(block) {
-    return 'mine();\n';
+    return t('mine()');
 };
+
+function t(a) {
+    return 'tasks.push("' + a + '");\n';
+}

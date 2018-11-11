@@ -11,7 +11,7 @@
     <script src="blockly/msg/js/zh-hant.js"></script>
     <script src="blockly/javascript_compressed.js"></script>
     <link rel="stylesheet" href="style.css">
-    <embed id = music src="Half_Bit.mp3" autostart="true" hidden="true" loop="0" volume="100" width="230" height=45></embed>
+    <embed id=music src="Half_Bit.mp3" autostart="true" hidden="true" loop="0" volume="100" width="230" height=45></embed>
     <!-- <audio src="Half_Bit.mp3" autoplay="autoplay" controls="controls" loop="loop"></audio> -->
 
 </head>
@@ -28,8 +28,8 @@
         <div class="bg"></div>
         <!-- <div class="player">OAO</div>
         <div class="btn">click</div> -->
-        <img class="player" src="./image/player/gcgj_player_front0.png"/>
-        
+        <img class="player" id="player_m" src="./image/player/gcgj_player_front0.png" />
+
         <!-- <div class="player">OAO</div> -->
         <div class="bar"></div>
         <div class="stonebar"></div>
@@ -45,7 +45,7 @@
         <category name="Control">
             <block type="controls_if"></block>
             <block type="controls_whileUntil"></block>
-            <block type="controls_for">
+            <block type="controls_repeat">
         </category>
         <category name="Logic">
             <block type="logic_compare"></block>
@@ -95,13 +95,14 @@
         }
 
         function runCode() {
-            window.LoopTrap = 1000;
+            window.LoopTrap = 1000000;
             Blockly.JavaScript.INFINITE_LOOP_TRAP =
                 'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
             var code = Blockly.JavaScript.workspaceToCode(workspace);
             Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
             try {
                 eval(code);
+                doTask();
             } catch (e) {
                 alert(e);
             }

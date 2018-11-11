@@ -23,9 +23,9 @@
     width: 100px;
     height: 100px;
     border: 1px solid grey;
-  }
+}
 
-  .player{
+.player {
     /* transition: 1s; */
     position: absolute;
     width: 100px;
@@ -33,8 +33,7 @@
     left: 400px;
     top: 300px;
     z-index: 3;
-  }
-
+}
 
 .btn {
     transition: 1s;
@@ -44,8 +43,7 @@
     background-color: blue;
     left: 100px;
     top: 100px;
- 
-  } 
+}
 
 .grass {
     position: absolute;
@@ -61,11 +59,16 @@
     height: 100px;
     border: 1px solid gray;
     z-index: 2;
-  }
+}
 
-  /* #player_m{ */
-    /* transition: 1s; */
-    /* position: absolute;
+
+/* #player_m{ */
+
+
+/* transition: 1s; */
+
+
+/* position: absolute;
     width: 100px;
     height: 200px;
     left: 400px;
@@ -73,11 +76,10 @@
     z-index: 3;
   } */
 
-  #music{
+#music {
     position: absolute;
     z-index: 0;
-  }
-
+}
 
 .bar {
     position: absolute;

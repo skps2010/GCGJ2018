@@ -9,8 +9,12 @@ var x = 4,
     dir = 0;
 
 var rockArray = new Array(100);
+var rockNum = 0;
 var monsterArray = new Array(100);
 var treeArray = new Array(100);
+var monsterArray = new Array(100);
+
+var tasks = new Array();
 
 set();
 
@@ -22,18 +26,38 @@ function move(a) {
     let dy = y + moveY[a];
 
     if (dx < 0 || dx > 9 || dy < 0 || dy > 9) return;
-    if (rockArray[dy * 10 + dx] == 1) return;
+    if (rockArray[dy * 10 + dx] >= 1 || monsterArray[dy * 10 + dx] == 1) return;
     x = dx;
     y = dy;
     bar--;
     set();
+    moveAni();
 }
 
 function mine() {
+    let indexRock = (y + moveY[dir]) * 10 + (x + moveX[dir]);
     if (bar <= 0) return;
-    if (rockArray[(y + moveY[dir]) * 10 + (x + moveX[dir])] != 1) return;
+    if (rockArray[indexRock] == 0) return;
     bar--;
     stonebar++;
+    rockArray[indexRock]--;
+    if(rockArray[indexRock]==0){
+        $("#rock"+indexRock).remove();
+        rockNum--;
+        while(rockNum<5){
+            let randomR = Math.floor(Math.random() * (100 - 0));
+            let locationX = randomR % 10 * 100;
+            let locationY = Math.floor(randomR / 10) * 100;
+            if(rockArray[randomR]==0 && randomR!= (y*10+x)){
+                rockArray[randomR]==2;
+                $(".bg").append('<img class="rock" id = rock' + randomR + ' src="./image/ground/gcgj_rock.png"/>');
+                $("#rock" + randomR).css("left", locationX + "px");
+                $("#rock" + randomR).css("top", locationY + "px");
+                rockNum++;
+            }
+        }
+    }
+    
 
     set();
 }
@@ -41,36 +65,29 @@ function mine() {
 function set() {
     console.table(rockArray);
     $(".player").css("left", (x * 100) + "px");
-    $(".player").css("top", (y * 100-100) + "px");
+    $(".player").css("top", (y * 100 - 100) + "px");
     $(".bar").css("height", (bar * 10 + 5) + "px");
     $(".stonebar").css("height", (stonebar * 10 + 5) + "px");
 }
 
 
-function moveAni(){
-    setTimeout(function(){
-        s2ImgCounter  = (s2ImgCounter+1)%2;
+function moveAni() {
+    setTimeout(function() {
+        s2ImgCounter = (s2ImgCounter + 1) % 2;
         s2Times++;
-        $("#player_s2").attr("src",  `./image/player/gcgj_player_s2-${s2ImgCounter}.png`);
-        if(s2Times<8){
+        $("#player_s2").attr("src", `./image/player/gcgj_player_s2-${s2ImgCounter}.png`);
+        if (s2Times < 8) {
             moveAni();
-        }else{
+        } else {
             s2Times = 0;
         }
-       },250);
+    }, 250);
 }
 
 var s2ImgCounter = 0;
 var s2Times = 0;
 
-function keyUpHandler(e) {
-   if (e.keyCode >= 37 && e.keyCode <= 40) key[e.keyCode - 37] = false;
+function doTask() {
+    eval(tasks.shift());
+    if (tasks.length > 0) setTimeout(doTask, 1000);
 }
-
-function keyDownHandler(e) {
-   if (e.keyCode >= 37 && e.keyCode <= 40) key[e.keyCode - 37] = true;
-}
-
-document.addEventListener("keydown", keyDownHandler, false);
-
-document.addEventListener("keyup", keyUpHandler, false);
